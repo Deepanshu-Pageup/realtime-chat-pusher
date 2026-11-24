@@ -1,6 +1,8 @@
 import express from "express";
 import cors from 'cors'
 import { env } from "./config/env";
+import chatRoutes from "./modules/chat/chat.routes";
+import { errorHandler, notFoundHandler } from "./middleware/error-handler";
 
 
 export const app = express();
@@ -12,9 +14,9 @@ app.use(cors({
 }))
 
 
-app.use(express.json())
+app.use(express.json({ limit: '10kb' }))
 
-app.get('health' , (req , res) => {
+app.get('/health' , (_req , res) => {
     res.status(200).json({
         success:true,
         message:'Chat server is running'
@@ -22,7 +24,8 @@ app.get('health' , (req , res) => {
 })
 
 // Routes
-
-import chatRoutes from "./modules/chat/chat.routes";
-
 app.use("/api/chat", chatRoutes);
+
+// Error handling (must be registered last)
+app.use(notFoundHandler);
+app.use(errorHandler);
