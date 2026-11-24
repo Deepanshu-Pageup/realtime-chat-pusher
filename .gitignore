@@ -1,0 +1,65 @@
+# ==========================================
+# SHARED (OS, IDEs, Environment & Logs)
+# ==========================================
+# Environment variables (applies to root, /frontend, /backend)
+.env
+.env.*
+!.env.example
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editors & IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================================
+# FRONTEND (React, Next.js, Vue, Vite, etc.)
+# ==========================================
+node_modules/
+dist/
+build/
+.next/
+out/
+.nuxt/
+.cache/
+.vite/
+coverage/
+
+# ==========================================
+# BACKEND (Node, Python, Java, Go, etc.)
+# ==========================================
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.pytest_cache/
+
+# Java / Spring
+target/
+*.jar
+*.war
+
+# Go / Rust / C++
+bin/
+*.exe
+*.out
+
+# Local Databases
+*.sqlite
+*.sqlite3
+*.db
