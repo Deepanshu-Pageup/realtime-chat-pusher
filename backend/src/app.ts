@@ -20,3 +20,9 @@ app.get('health' , (req , res) => {
         message:'Chat server is running'
     })
 })
+
+// Routes
+
+import chatRoutes from "./modules/chat/chat.routes";
+
+app.use("/api/chat", chatRoutes);
