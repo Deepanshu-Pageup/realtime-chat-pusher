@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   const { messages, connectionState, isConnected, connectionError } = useChat();
-  const [username, setUsername] = useState("Deep");
+  const [username, setUsername] = useState("");
   const [text, setText] = useState("");
   const [error, setError] = useState("");
   const [isSending, setIsSending] = useState(false);
